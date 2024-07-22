@@ -263,7 +263,6 @@ class NinjaBuildExtension(BuildExtension):
         super().__init__(*args, **kwargs)
 
 
-PYTORCH_VERSION = "2.3.1"
 CUDA_VERSION = "12.1"
 
 setup(
@@ -283,7 +282,7 @@ setup(
     ),
     author="vLLM Team",
     description="Forward-only flash-attn",
-    long_description=f"Forward-only flash-attn package built for PyTorch {PYTORCH_VERSION} and CUDA {CUDA_VERSION}",
+    long_description=f"Forward-only flash-attn package built for PyTorch and CUDA {CUDA_VERSION}",
     url="https://github.com/vllm-project/flash-attention.git",
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -297,6 +296,6 @@ setup(
         "bdist_wheel": CachedWheelsCommand,
     },
     python_requires=">=3.8",
-    install_requires=[f"torch == {PYTORCH_VERSION}"],
+    install_requires=["torch"],
     setup_requires=["psutil"],
 )
